@@ -7,7 +7,7 @@ type buttonProps = React.ComponentProps<"button"> & {
 const Button = ({children, onClick, ...props}:  buttonProps) =>{
     return (
         <>
-            <button onClick={onClick}>{children}</button>
+            <button {...props} onClick={onClick}>{children}</button>
         </>
     )
 }
