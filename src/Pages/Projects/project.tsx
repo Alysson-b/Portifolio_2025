@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SiJavascript, SiTypescript, SiHtml5, SiCss3, SiVuedotjs, SiReact, SiAngular} from "react-icons/si";
 import { ButtonContainer, CARD, CARDS } from "./styled";
+import img0 from "../../img/img0.png"
 import img1 from "../../img/card1.png"
 import img2 from "../../img/card2.png"
 import img3 from "../../img/card3.png"
@@ -54,7 +55,7 @@ interface Dados{
 
 function Projects(){
     
-    const image = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14]
+    const image = [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14]
     const [loading, setLoading] = useState(true)
     
     const [data, setData] = useState<Dados[]>([])
