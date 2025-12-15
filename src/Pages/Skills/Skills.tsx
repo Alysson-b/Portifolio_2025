@@ -1,4 +1,4 @@
-import { SiJavascript, SiTypescript, SiHtml5, SiCss3, SiReact, SiAngular,SiMysql, SiPython, SiBootstrap, SiTailwindcss, SiGithub, SiVite, SiNextdotjs, SiNodedotjs, SiSass} from "react-icons/si";
+import { SiJavascript, SiTypescript, SiHtml5, SiCss3, SiReact, SiAngular,SiMysql, SiPython, SiBootstrap, SiTailwindcss, SiGithub, SiGit, SiVite, SiNextdotjs, SiNodedotjs, SiSass} from "react-icons/si";
 import { ButtonContainer, CardSkills } from "./style";
 import Button from "../../Components/Button";
 import { useNavigate } from "react-router-dom";
@@ -69,6 +69,11 @@ function  Skills(){
 
                 <div className="skills">
                     <SiGithub size={50} color="#FFFFFF" />
+                    <p>GitHub</p>
+                </div>
+
+                <div className="skills">
+                    <SiGit size={50} color="#f8492a" />
                     <p>GitHub</p>
                 </div>
 

@@ -6,6 +6,9 @@ import { ButtonContainer, CardContato, CardInfo, ContainerContato } from "./styl
 import { useNavigate } from "react-router-dom"
 import { useState} from "react"
 import emailjs from "@emailjs/browser"
+import { toast } from "react-toastify"
+
+
 
 
 
@@ -21,12 +24,12 @@ function Contato(){
     function handeForm(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault()
         if(nome === "" || email === "" ||  message === ""){
-            alert("Por favor preenchar os campos corretamente")
+            toast("Preencha todos os campos")
             return
         }
 
         if (!email.includes("@")) {
-            alert("E-mail inválido")
+            toast.error("E-mail inválido")
             return
         }
         const templateParams = {
@@ -36,14 +39,14 @@ function Contato(){
         }
         setCarreando(true)
         emailjs.send("service_gr428kg", "template_fj03c51", templateParams,"4pQ4zTBQYH9TM3kGe")
-        .then((response) =>{
-            console.log("Email enviado", response.status, response.text)
+        .then(() =>{
+            toast.success("Email enviado com sucesso! 📧")
             setNome("")
             setEmail("")
             setMessage("")
         
         }).catch(()=>{
-            alert("Error ao enviar mensagem")
+            toast.error("Erro ao enviar email 😢")
         })
         .finally(()=> setCarreando(false))
 
@@ -85,7 +88,7 @@ function Contato(){
                         <Input onChange={(e)=> setNome(e.target.value)} value={nome} id="nome" label="" type="text" placeholder="Seu Nome"/>
                         <Input onChange={(e)=> setEmail(e.target.value)} value={email} id="email" label="" type="email" placeholder="Seu E-mail"/>
                         <textarea onChange={(e)=> setMessage(e.target.value)} value={message} name="areas" id="area" placeholder="Sua mensagem"></textarea>
-                        <Button  children={ carregando ? "Envaindo..." : "Enviar"} type="submit"/>
+                        <Button disabled={carregando}  children={ carregando ? "Envaindo..." : "Enviar"} type="submit"/>
                     </form>
                 </CardContato>
 

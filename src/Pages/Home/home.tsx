@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import hollow from "../../img/hollow.png"
 
+
 import { Headers, NavLink } from "./styled";
 import { useNavigate } from "react-router-dom";
 
 
+export const routes: Record<string,string> = {
+    "Projetos": "/projetos",
+    "Skills": "/skills",
+    "Sobre Mim": "/sobre",
+    "Contato": "/contato"
+}
 
 function Home(){
     
@@ -12,22 +19,16 @@ function Home(){
     const items = ["Projetos", "Skills", "Sobre Mim", "Contato"]
     const navigation = useNavigate()
 
-    const routes: Record<string,string> = {
-        "Projetos": "/projetos",
-        "Skills": "/skills",
-        "Sobre Mim": "/sobre",
-        "Contato": "/contato"
-    }
 
     useEffect(() =>{
         const handleSelect = (event: KeyboardEvent) =>{
             const index = items.indexOf(selectItem)
 
-            if(event.key === "ArrowLeft"){
+            if(event.key === "ArrowUp"){
                 const next =(index + 1) % items.length
                 setSelectItem(items[next])
 
-            }else if (event.key === "ArrowRight"){
+            }else if (event.key === "ArrowDown"){
                 const prev =(index - 1 + items.length) % items.length
                 setSelectItem(items[prev])
             }
@@ -49,6 +50,7 @@ function Home(){
                 <h2>Alisson Barbosa</h2>
             </div>
 
+            
             <NavLink>
                 <div className="links">
                     <ul > 

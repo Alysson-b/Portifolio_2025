@@ -50,7 +50,7 @@ export const SobreInfo = styled.div`
     flex-direction: column;
     padding: 2rem;
     gap: 2rem;
-    background-color: black;
+    background: linear-gradient(90deg, rgba(10, 15, 31, 0.7) , rgba(30, 42, 68, 0.7) , rgba(30, 42, 68, 0.7));
     border-radius: 12px;
     color: aliceblue;
     box-shadow:

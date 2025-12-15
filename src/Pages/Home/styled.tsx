@@ -6,6 +6,20 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+
+    .Toastify__toast {
+    background: linear-gradient(90deg, rgba(10, 15, 31, 0.9) , rgba(30, 42, 68, 0.8) , rgba(30, 42, 68, 0.7));
+    color: #fff;
+    font-family: "Cinzel Decorative";
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-left: 4px solid rgb(160, 108, 255);
+    }
+
+
 
 `
 export const Headers = styled.div`
@@ -22,7 +36,6 @@ export const Headers = styled.div`
     }
 
     h1{
-
     font-size: 8rem;
     font-weight: 400;
     color: #fff;
@@ -45,6 +58,32 @@ h2{
 
 }
 
+
+@media (max-width: 1400px) {
+        h1{
+            font-size: 6rem;
+
+        }
+        h2{
+            font-size: 2rem;
+        }
+    }
+    @media (max-width: 1000px) {
+        h1{
+            font-size: 4rem;
+        }
+        h2{
+            font-size: 1rem;
+        }
+    }
+    @media (max-width: 400px) {
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+            font-size: 0.5rem;
+        }
+    }
 
 
 `
@@ -99,11 +138,11 @@ export const NavLink = styled.div`
         width: 0px;
         height: 3px;
         border-radius: 50%;
-        background-color: #fcfcff;
+        background-color: none;
         position: absolute;
         top: 100%;
         margin: 0.5rem 0;
-        transition: .5s ease-in-out;
+        transition: .3s ease-in-out;
         
         }
         .links li{
@@ -111,7 +150,8 @@ export const NavLink = styled.div`
         transition: 0.3s ease-in-out;
         }
         .links li:hover::before{
-            width: 100%;
+            background-color: #e6e6e6;
+            width: 90%;
         
 }
     

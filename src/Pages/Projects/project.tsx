@@ -62,13 +62,12 @@ function Projects(){
     const navigate = useNavigate()
 
     useEffect(()=>{
+        
         setTimeout(()=>{
 
             async function buscarDados(){
                 try{
-                    
-                    
-                    const response = await fetch(`https://api.github.com/users/alysson-b/repos?sort=created&direction=desc&per_page=14`)
+                    const response = await fetch(`https://api.github.com/users/alysson-b/repos?sort=created&direction=desc&per_page=12`)
                     
                     if(!response.ok){
                         throw new Error('Error na requisição: ' + response.status)
@@ -81,13 +80,14 @@ function Projects(){
                     console.log("error")
                 }finally{
                     setLoading(false)
+                }
+                
             }
             
-        }
-        
-        buscarDados()
-        }, 1500)
-    },[])
+            buscarDados()
+            
+        },1000)
+        },[])
 
     if(loading){
         return(
@@ -116,7 +116,9 @@ function Projects(){
                         return Icon ? <Icon color={iconColor} size={"22px"} /> : <span>{dados.language}</span>;
                     })()}</p>
                     
-                    <a target="_blank" href={dados.homepage}>{dados.homepage.replace("https://", "")}</a>
+                    <Button>
+                        <a target="_blank" href={dados.homepage}>saiba mais</a>
+                    </Button>
                     
                     </CARD>
                 ))}

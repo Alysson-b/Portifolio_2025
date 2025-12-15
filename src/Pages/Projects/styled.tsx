@@ -5,14 +5,12 @@ export const CARDS = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
     padding: 2rem 4rem;
     margin: 3rem  0;
     
     
-    
-
     @media (max-width: 1400px) {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -29,11 +27,11 @@ export const CARD = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 400px;
     text-align: center;
     margin: 0 auto;
+    width: 300px;
     gap: 1rem;
-    height: 400px;
+    height: 300px;
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid rgba(200, 220, 255, 0.15);
@@ -68,12 +66,18 @@ export const CARD = styled.div`
     
     }
     a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
-        font-family: "Spectral SC", sans-serif;
-        color: #d6d6d6;
+        color: #00000060;
+        font-weight: 700;
+        font-size: 0.7rem;
+        font-family: "Cinzel Decorative", sans-serif;
+        
     }
     a:hover{
-            color: white;
+            color: #000000eb;
             text-shadow:
                 0 0 12px rgba(255, 255, 255, 1),
                 0 0 35px rgba(255, 255, 255, 0.8),
@@ -87,16 +91,17 @@ export const CARD = styled.div`
         letter-spacing: 1px;
         text-shadow: 0 0 8px rgba(180, 200, 255, 0.4);
     }
-    .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        filter: blur(6px);
-        opacity: 0.4;
-        z-index: 1;
-}
+    button {
+
+        background: linear-gradient(90deg, #c9e1f8, #6B9FFF);
+        filter: blur(3 1);
+        border: none;
+        padding: 6px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+
 
 
 

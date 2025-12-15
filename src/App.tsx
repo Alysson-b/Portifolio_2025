@@ -6,9 +6,11 @@ import Projects from "./Pages/Projects/project"
 import Skills from "./Pages/Skills/Skills"
 import SobreMin from "./Pages/Sobre/Sobre"
 import Home from "./Pages/Home/home"
-
-
-
+import Animation from "./Components/animations"
+import Dpad from "./Components/dPad"
+import Background from "./Components/Backgound"
+import { ToastContainer } from "react-toastify"
+import "react-toastify"
 
 
 
@@ -17,12 +19,17 @@ import Home from "./Pages/Home/home"
 
 
 function App() {
-  
+
+    
   return (
     <>
         <BrowserRouter>
           <Container>
-                {[...Array(20)].map((_, i) => (<div key={i} className="float-particles" style={{left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`,animationDelay: `${Math.random() * 5}s`,animationDuration: `${8 + Math.random() * 4}s`,}}
+            <ToastContainer position="top-right" theme="dark" />
+            <Animation/>  
+            <Dpad/>
+            <Background/>
+                  {[...Array(20)].map((_, i) => (<div key={i} className="float-particles" style={{left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`,animationDelay: `${Math.random() * 5}s`,animationDuration: `${8 + Math.random() * 4}s`,}}
                 />
                 ))}
                 <Routes>
