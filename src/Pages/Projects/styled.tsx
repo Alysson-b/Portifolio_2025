@@ -4,7 +4,6 @@ export const CARDS = styled.div`
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    
     gap: 1rem;
     width: 100%;
     padding: 2rem 4rem;
@@ -25,13 +24,12 @@ export const CARDS = styled.div`
 `
 export const CARD = styled.div`
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    text-align: center;
     margin: 0 auto;
-    width: 300px;
-    gap: 1rem;
-    height: 300px;
+    width: 400px;
+    min-height: 350px;
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid rgba(200, 220, 255, 0.15);
@@ -58,8 +56,8 @@ export const CARD = styled.div`
     p {
         display: flex;
         align-items: center;
+        gap: 5rem;
         flex-wrap: wrap;
-        justify-content: space-between;
         color: #d6d6d6;
         font-family: "Spectral SC", serif;
 
@@ -92,12 +90,14 @@ export const CARD = styled.div`
         text-shadow: 0 0 8px rgba(180, 200, 255, 0.4);
     }
     button {
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: linear-gradient(90deg, #c9e1f8, #6B9FFF);
         filter: blur(3 1);
         border: none;
         padding: 6px;
-        width: 100%;
+        width: 50%;
         cursor: pointer;
         border-radius: 15px;
     }

@@ -24,11 +24,11 @@ function Home(){
         const handleSelect = (event: KeyboardEvent) =>{
             const index = items.indexOf(selectItem)
 
-            if(event.key === "ArrowUp"){
+            if(event.key === "ArrowDown"){
                 const next =(index + 1) % items.length
                 setSelectItem(items[next])
 
-            }else if (event.key === "ArrowDown"){
+            }else if (event.key === "ArrowUp"){
                 const prev =(index - 1 + items.length) % items.length
                 setSelectItem(items[prev])
             }
