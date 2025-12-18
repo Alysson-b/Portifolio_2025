@@ -5,6 +5,7 @@ import loading from "../img/hollow-knight-knight-ezgif.com-rotate.gif"
 import { useEffect, useRef, useState } from "react"
 import {routes} from "../../src/Pages/Home/home"
 
+
 type T = "parado" | "correndo" | "atacando"
 
 const router = Object.values(routes)
@@ -18,7 +19,17 @@ const Animation = () => {
     const personagem = useRef<HTMLImageElement | null>(null)
     const [navegou, setNavegou] = useState(false)
 
-    
+
+    useEffect(()=>{
+        const reloarding = (event: KeyboardEvent)=>{
+            if(event.key ===  "Escape"){
+                navigate("/")
+            }
+        }
+        window.addEventListener("keydown", reloarding)
+        return () => window.removeEventListener("keydown", reloarding)
+    },[navigate])
+
     useEffect(() => {
         const calcularLimite = () => {
             if (!personagem.current) return
@@ -82,6 +93,9 @@ const Animation = () => {
         setNavegou(true)
         const proxRota = router[proxIndex]
         navigate(proxRota)
+
+
+
     }, [posicao, imgAtiva, limiteMax, navegou, location.pathname, navigate])
 
     

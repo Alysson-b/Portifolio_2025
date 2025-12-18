@@ -11,7 +11,6 @@ import img6 from "../../img/card6.png"
 import img7 from "../../img/card7.png"
 import img8 from "../../img/card8.png"
 import img9 from "../../img/card9.png"
-import img10 from "../../img/card10.png"
 import img11 from "../../img/card11.png"
 import img12 from "../../img/card12.png"
 import img13 from "../../img/card13.png"
@@ -55,7 +54,7 @@ interface Dados{
 
 function Projects(){
     
-    const image = [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14]
+    const image = [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img11, img12, img13, img14]
     const [loading, setLoading] = useState(true)
     
     const [data, setData] = useState<Dados[]>([])
@@ -107,7 +106,8 @@ function Projects(){
         <h1 className="topText">Meus Projetos</h1>
         <CARDS>
                 {data.map((dados, index) =>( 
-                    <CARD key={dados.id}  style={{backgroundImage: `url(${image[index]})`}}>
+                    <CARD onClick={() => window.open(dados.homepage, "_blank")}  key={dados.id}  style={{backgroundImage: `url(${image[index]})`}}>
+                        
                     <p><span className="name">{dados.name}</span> 
 
                     {(() =>{

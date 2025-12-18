@@ -20,6 +20,9 @@ export const CARDS = styled.div`
         grid-template-columns: 1fr;
     }
 
+    a{
+        text-decoration: none;
+    }
 
 `
 export const CARD = styled.div`
