@@ -33,7 +33,15 @@ export const Headers = styled.div`
         display: flex;
         align-items: center;
         flex-direction: column;
+        gap: 0.25rem ;
+        .iconUp{
+            margin-right: 1rem;
+        }
+        .iconDown{
+            width: 60%;
+        }
     }
+    
 
     h1{
     font-size: 8rem;

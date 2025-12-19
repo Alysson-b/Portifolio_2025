@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import hollow from "../../img/hollow.png"
-
+import up from "../../img/iconUp.png"
+import down from "../../img/iconDown.png"
 
 import { Headers, NavLink } from "./styled";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +26,7 @@ function Home(){
             const index = items.indexOf(selectItem)
 
             if(event.key === "ArrowDown"){
+                
                 const next =(index + 1) % items.length
                 setSelectItem(items[next])
 
@@ -46,8 +48,11 @@ function Home(){
     return(
         <Headers>
             <div className="inicio" >
-                <h1>Portfólio</h1>
-                <h2>Alisson Barbosa</h2>
+                <img className="iconUp"  src={up} alt="" />
+                    <h1>Portfólio</h1>
+                    <h2>Alisson Barbosa</h2>
+                <img className="iconDown"  src={down} alt="" />
+                
             </div>
 
             

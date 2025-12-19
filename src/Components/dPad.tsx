@@ -7,6 +7,10 @@ const Dpad =()=>{
 
     const [active , setActive] = useState<T>(null)
 
+    
+
+    
+
     useEffect(() =>{
                 const handlePad = (event: KeyboardEvent) =>{
                     
@@ -27,6 +31,7 @@ const Dpad =()=>{
                 return() =>{ window.removeEventListener("keydown", handlePad)
                 }
             },[])
+
     
     
     return(
