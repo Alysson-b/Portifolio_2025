@@ -35,6 +35,7 @@ const Dpad =()=>{
         <div className="dpad">
             <button className={`up ${active === "up" ? "active": ""}`}>▲</button>
             <button className={`left ${active === "left" ? "active": ""}`}>◀</button>
+            <i className="center"></i>
             <button className={`right ${active === "right" ? "active" : ""}`}>▶</button>
             <button className={`down ${active === "down" ? "active" : ""}`}>▼</button>
         </div>
