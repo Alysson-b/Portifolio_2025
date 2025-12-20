@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react"
 
 
-type T = "up"|  "left" | "right" | "down" | null
+export type T = "up"|  "left" | "right" | "down" | null
 
 const Dpad =()=>{
 
     const [active , setActive] = useState<T>(null)
-
-    
-
-    
 
     useEffect(() =>{
                 const handlePad = (event: KeyboardEvent) =>{
