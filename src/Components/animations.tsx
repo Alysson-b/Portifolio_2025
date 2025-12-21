@@ -46,7 +46,6 @@ const Animation = () => {
     useEffect(() => {
         const handlekey = (event: KeyboardEvent) => {
             if (imgAtiva !== "parado") return
-            
             if(event.key === "ArrowRight"){
                 setImgAtiva("correndo")
             } else if (event.key === "ArrowLeft"){

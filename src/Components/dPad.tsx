@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 export type T = "up"|  "left" | "right" | "down" | null
 
+
 const Dpad =()=>{
 
     const [active , setActive] = useState<T>(null)
@@ -10,15 +11,11 @@ const Dpad =()=>{
     useEffect(() =>{
                 const handlePad = (event: KeyboardEvent) =>{
                     
-                    if(event.key === "ArrowUp"){
-                        setActive("up")
-                    }else if (event.key === "ArrowLeft"){
-                        setActive("left")
-                    }else if (event.key === "ArrowDown"){
-                        setActive("down")
-                    } else if (event.key === "ArrowRight"){
-                        setActive("right")
-                    }
+                    if(event.key === "ArrowUp") {setActive("up")}
+                    else if (event.key === "ArrowLeft") {setActive("left")}
+                    else if (event.key === "ArrowDown") {setActive("down")} 
+                    else if (event.key === "ArrowRight") {setActive("right")}
+
                     setTimeout(()=> setActive(null), 100)
 
                 }

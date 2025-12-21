@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEventHandler } from "react";
 import hollow from "../../img/hollow.png"
 import up from "../../img/iconUp.png"
 import down from "../../img/iconDown.png"
